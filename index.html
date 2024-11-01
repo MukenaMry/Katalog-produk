@@ -12,23 +12,26 @@
 <body style="background-color: rosybrown;">
 
 
-    <!-- Navbar -->
-<nav class="flex justify-between items-center p-4" style="background-color: rosybrown;">
+<!-- Navbar -->
+<nav class="flex justify-between items-center p-4" style="background-color: rosybrown; border-bottom: 2px solid saddlebrown;">
     <h1 class="text-xl font-bold" style="color: saddlebrown;">@__mirayamukena</h1>
-<div class="flex items-center">
-    <i class="fas fa-shopping-cart text-xl cursor-pointer" style="color: saddlebrown;" onclick="viewCart()"></i>
-    <span id="cartCount" class="ml-1 text-sm font-bold text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
-</div>
-
+    <div class="flex items-center">
+        <i class="fas fa-shopping-cart text-xl cursor-pointer" style="color: saddlebrown;" onclick="viewCart()"></i>
+        <span id="cartCount" class="ml-1 text-sm font-bold text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+    </div>
 </nav>
 
 
 
 
-    <!-- Search Input -->
-    <div class="p-4">
-        <input type="text" id="searchInput" placeholder="Cari produk..." class="w-full p-2 border border-gray-300 rounded-md" oninput="filterProducts()">
-    </div>
+
+<!-- Search Input -->
+<div class="p-4">
+    <input type="text" id="searchInput" placeholder="Cari produk..." class="w-full p-2 border border-gray-300 rounded-md" oninput="filterProducts()">
+    <!-- Keterangan di bawah input pencarian -->
+    <p class="text-sm text-gray-600 mt-2">Cara belanja, Anda cukup pilih motif yang mau anda beli ,klik motif jika sudah terbuka klik checkout lalu klik keranjang belanja di pojok kanan atas lalu isi data pembelian jika sudah terisi klik beli sekarang anda akan otomatis di arahkan ke WhatsApp.happy shopping</p>
+</div>
+
 
     <!-- Product Grid -->
     <div id="productGrid" class="p-4 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -132,7 +135,38 @@
                 title: "Miraya Vol.10 Folk BW",
                 price: 199000,
                 images: ["img/folkbw1.jpg", "img/folkbw2.jpg"]
-            }
+            },
+            {
+                title: "Miraya Vol.9 Royale black",
+                price: 199000,
+                images: ["img1/royaleblack1.jpg", "img1/royaleblack2.jpg", "img1/royaleblack3.jpg"]
+            },
+            {
+                title: "Miraya Vol.9 Royale Olive",
+                price: 199000,
+                images: ["img1/royaleolive1.jpg", "img1/royaleolive2.jpg", "img1/royaleolive3.jpg"]
+            },
+            {
+                title: "Miraya Vol.9 Royale Almond",
+                price: 199000,
+                images: ["img1/royalealmond1.jpg", "img1/royalealmond2.jpg", "img1/royalealmond3.jpg"]
+            },
+            {
+                title: "Miraya Vol.9 Royale Lemon",
+                price: 199000,
+                images: ["img1/royalelemon1.jpg", "img1/royalelemon2.jpg", "img1/royalelemon3.jpg"]
+            },
+            {
+                title: "Miraya Vol.9 Royale Frost",
+                price: 199000,
+                images: ["img1/royalefrost1.jpg", "img1/royalefrost2.jpg", "img1/royalefrost3.jpg"]
+            },
+            {
+                title: "Miraya Vol.9 Royale Dust Pink",
+                price: 199000,
+                images: ["img1/royaledust1.jpg", "img1/royaledust2.jpg", "img1/royaledust3.jpg"]
+            },
+            
         ];
 
         const shoppingCart = []; // Array to hold cart items
