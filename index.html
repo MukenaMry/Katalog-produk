@@ -21,9 +21,34 @@
     </div>
 </nav>
 
+<!-- Enhanced Promotional Banner with Price List -->
+<!-- Enhanced Promotional Banner with Price List -->
+<div class="bg-gradient-to-r from-orange-400 to-yellow-500 text-center py-8 shadow-lg" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;">
+    <h2 class="text-white font-extrabold text-2xl mb-2">🎉Price list Miraya mukena! 🎉</h2>
 
-
-
+    <!-- Price List Section -->
+<div class="max-w-4xl mx-auto bg-orange-100 bg-opacity-90 rounded-lg shadow-md p-1 grid grid-cols-4 gap-0.5">
+    <!-- Compact Price Cards in Four Columns -->
+    <div class="bg-white bg-opacity-80 p-0.5 rounded-md shadow border border-saddlebrown">
+        <h3 class="font-bold text-orange-700 text-xs">Harga/1pcs</h3>
+        <p class="text-orange-600 font-bold text-sm">Rp199,000 <span class="line-through text-gray-500 text-xs"></span></p>
+    </div>
+    <div class="bg-white bg-opacity-80 p-0.5 rounded-md shadow border border-saddlebrown">
+        <h3 class="font-bold text-orange-700 text-xs">Beli 5 Sampai 11 PCS</h3>
+        <p class="text-orange-600 font-bold text-sm">Rp169,200 <span class="line-through text-gray-500 text-xs">Rp199,000</span></p>
+    </div>
+    <div class="bg-white bg-opacity-80 p-0.5 rounded-md shadow border border-saddlebrown">
+        <h3 class="font-bold text-orange-700 text-xs">Beli 12 sampai 19 pcs</h3>
+        <p class="text-orange-600 font-bold text-sm">Rp139,200 <span class="line-through text-gray-500 text-xs">Rp199,000</span></p>
+    </div>
+    <div class="bg-white bg-opacity-80 p-0.5 rounded-md shadow border border-saddlebrown">
+        <h3 class="font-bold text-orange-700 text-xs">Beli 20pcs/1kodi</h3>
+        <p class="text-orange-600 font-bold text-sm">Rp99,200 <span class="line-through text-gray-500 text-xs">Rp199,000</span></p>
+    </div>
+    
+    <!-- Add more items as needed in sets of 4 -->
+</div>
+</div>
 
 <!-- Search Input -->
 <div class="p-4">
@@ -49,7 +74,7 @@
                 <button id="prevBtn" class="bg-gray-300 text-gray-800 rounded-md px-4 py-2" onclick="changeImage(-1)">Sebelumnya</button>
                 <button id="nextBtn" class="bg-gray-300 text-gray-800 rounded-md px-4 py-2" onclick="changeImage(1)">Berikutnya</button>
             </div>
-            <button id="checkoutBtn" class="mt-4 w-full py-2 bg-green-500 text-white rounded-md" onclick="addToCart()">Checkout</button>
+            <button id="checkoutBtn" class="mt-4 w-full py-2 border-2 border-saddlebrown" style="color: rosybrown;" onclick="addToCart()">Checkout</button>
         </div>
     </div>
 
@@ -100,7 +125,30 @@
         <button class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md" onclick="checkout()">Beli Sekarang</button>
     </div>
 </div>
+<!-- Footer -->
+<footer class="bg-saddlebrown text-white py-4 mt-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <!-- Left Section - Logo and Brief Info -->
+        <div class="mb-4 md:mb-0">
+            <h2 class="text-xl font-bold">@__mirayamukena</h2>
+            <p class="text-sm">Discover beautiful and unique Mukena collections for every occasion.</p>
+        </div>
 
+        <!-- Right Section - Social Media Icons -->
+        <div class="flex space-x-4">
+            <a href="https://www.instagram.com/__mirayamukena" target="_blank" class="text-white hover:text-gray-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/6281297647873" target="_blank" class="text-white hover:text-gray-300">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Bottom Section - Copyright -->
+    <div class="text-center mt-4">
+        <p class="text-xs">© 2024 Miraya Mukena. All rights reserved.</p>
+    </div>
+</footer>
 
 
     <script>
@@ -166,6 +214,26 @@
                 price: 199000,
                 images: ["img1/royaledust1.jpg", "img1/royaledust2.jpg", "img1/royaledust3.jpg"]
             },
+            {
+                title: "Miraya Vol.8 Moorland Slate",
+                price: 199000,
+                images: ["img2/morland1.jpg", "img2/morland2.jpg", "img2/morland3.jpg"]
+            },
+            {
+                title: "Miraya Vol.8 Moorland Pink",
+                price: 199000,
+                images: ["img2/morlandpink1.jpg", "img2/morlandpink2.jpg", "img2/morlandpink3.jpg"]
+            },
+            {
+                title: "Miraya Vol.8 Moorland Bisque",
+                price: 199000,
+                images: ["img2/morlandbisque1.jpg", "img2/morlandbisque2.jpg", "img2/morlandbisque3.jpg"]
+            },
+            {
+                title: "Miraya Vol.8 Moorland Sheer",
+                price: 199000,
+                images: ["img2/morlandsher1.jpg", "img2/morlandsher2.jpg", "img2/morlandsher3.jpg"]
+            }
             
         ];
 
@@ -232,22 +300,12 @@ function addToCart() {
 }
 
 
-// View shopping cart
-function updateQuantity(title, change) {
-    if (shoppingCart[title]) {
-        shoppingCart[title].quantity += change;
-        if (shoppingCart[title].quantity <= 0) {
-            delete shoppingCart[title]; // Hapus item jika jumlahnya 0
-        }
-        viewCart(); // Perbarui tampilan keranjang
-    }
-}
-
-
+// View shopping cart with discounts based on quantity
 function viewCart() {
     const cartItemsContainer = document.getElementById("cartItems");
-    cartItemsContainer.innerHTML = ''; // Hapus item yang ada
+    cartItemsContainer.innerHTML = ''; // Clear existing items
     let totalPrice = 0;
+    let totalQuantity = 0;
 
     if (Object.keys(shoppingCart).length === 0) {
         cartItemsContainer.innerHTML = '<p class="text-gray-500">Keranjang belanja kosong.</p>';
@@ -257,18 +315,28 @@ function viewCart() {
                 <div class="flex items-center border-b border-gray-300 py-2">
                     <img src="${item.image}" alt="${title}" class="w-16 h-16 object-cover mr-2">
                     <div class="flex flex-col justify-between w-full ml-2">
-                        <span class="font-semibold">${title}</span> <!-- Nama produk -->
+                        <span class="font-semibold">${title}</span>
                         <div class="flex items-center">
                             <button class="bg-gray-300 text-gray-800 rounded-md px-2" onclick="updateQuantity('${title}', -1)">-</button>
                             <span class="mx-2">${item.quantity}</span>
                             <button class="bg-gray-300 text-gray-800 rounded-md px-2" onclick="updateQuantity('${title}', 1)">+</button>
                         </div>
-                        <span class="font-bold">Rp${(item.price * item.quantity).toLocaleString()}</span> <!-- Harga produk -->
+                        <span class="font-bold">Rp${(item.price * item.quantity).toLocaleString()}</span>
                     </div>
                 </div>
             `;
             cartItemsContainer.innerHTML += itemDiv;
-            totalPrice += item.price * item.quantity; // Total harga
+            totalPrice += item.price * item.quantity;
+            totalQuantity += item.quantity;
+        }
+
+        // Apply discounts based on quantity
+        if (totalQuantity >= 5 && totalQuantity <= 11) {
+            totalPrice *= 0.85; // Apply 15% discount
+        } else if (totalQuantity >= 12 && totalQuantity <= 19) {
+            totalPrice *= 0.70; // Apply 30% discount
+        } else if (totalQuantity >= 20) {
+            totalPrice *= 0.50; // Apply 50% discount
         }
     }
 
@@ -297,15 +365,12 @@ function closeCart() {
         
         
     // checkout //
-// Clear the cart after checkout
 function checkout() {
-    // Retrieve form values
     const name = document.getElementById("name").value.trim();
     const address = document.getElementById("address").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const category = document.querySelector('input[name="category"]:checked')?.value;
 
-    // Check for empty cart or incomplete form fields
     if (Object.keys(shoppingCart).length === 0) {
         alert("Keranjang belanja kosong.");
         return;
@@ -315,16 +380,21 @@ function checkout() {
         return;
     }
 
-    // Create cart details message
     let cartMessage = "Daftar Pesanan:\n";
+    let totalPrice = 0;
+    let totalQuantity = 0;
+
     for (const [title, item] of Object.entries(shoppingCart)) {
         cartMessage += `- ${title} x${item.quantity} (Rp${(item.price * item.quantity).toLocaleString()})\n`;
+        totalPrice += item.price * item.quantity;
+        totalQuantity += item.quantity;
     }
 
-    // Calculate total price
-    const totalPrice = Object.values(shoppingCart).reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    // Terapkan diskon 15% jika total jumlah item di dalam rentang 5-11
+    if (totalQuantity >= 5 && totalQuantity <= 11) {
+        totalPrice *= 0.85; // Diskon 15%
+    }
 
-    // Build final message for WhatsApp
     const message = `
         Halo, saya ingin memesan:
         
@@ -338,17 +408,14 @@ function checkout() {
         Kategori Pembeli: ${category}
     `;
 
-    // Encode message for URL
     const whatsappUrl = `https://wa.me/6281297647873?text=${encodeURIComponent(message)}`;
-
-    // Open WhatsApp with pre-filled message
     window.open(whatsappUrl, "_blank");
 
-    // Clear the cart after checkout
-    shoppingCart = {}; // Reset shopping cart object
+    shoppingCart = {}; // Reset keranjang belanja setelah checkout
     viewCart();
     closeCart();
 }
+
 
 // Update cart count display
 function updateCartCount() {
